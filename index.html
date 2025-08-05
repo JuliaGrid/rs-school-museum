@@ -222,7 +222,13 @@
             <div class="container">
                 <h2>BUY TICKETS</h2>
                 <div class="tickets__content">
-                    <img class="tickets__img" src='assets/img/tickets.jpg' alt="tickets">
+                    <picture class="tickets__img">
+                        <source media="(max-width: 767px)" srcset="assets/img/tickets/tickets-mobile.jpg">
+                        <source media="(max-width: 1023px)" srcset="assets/img/tickets/tickets-tablet.jpg">
+                        <source media="(max-width: 1439px)" srcset="assets/img/tickets/tickets-desktop.jpg">
+                        <!-- <source media="(min-width: 1023px)" srcset="assets/img/tickets/tickets-desktop.jpg"> -->
+                        <img src="assets/img/tickets/tickets.jpg" alt="Tickets">
+                    </picture>
                     <form>
                         <div class="tickets__info">
                             <fieldset class="tickets__type">
