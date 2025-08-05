@@ -17,10 +17,10 @@ p {
 h2 {
   font-family: "Forum", serif;
   text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 5px;
   font-size: 28px;
   line-height: 40px;
-  letter-spacing: 5px;
-  font-weight: 400;
 
   @media (min-width: 768px) {
     font-size: 40px;
@@ -65,11 +65,11 @@ button {
   padding: 0;
 }
 .container {
+  overflow: hidden;
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
   padding-top: 60px;
-  overflow: hidden;
 
   @media (min-width: 1024px) {
     max-width: 1000px;
@@ -210,20 +210,20 @@ header .container {
 }
 
 .welcome__button {
+  display: none;
   background-color: #710707;
-  padding: 19px 45px;
   border-radius: 10px;
   font-size: 20px;
+  padding: 19px 45px;
   margin-top: 50px;
-  display: none;
 
   @media (min-width: 1024px) {
     display: block;
   }
 
   @media (min-width: 1920px) {
-    padding: 25px 64px;
     font-size: 22px;
+    padding: 25px 64px;
     margin-top: 75px;
   }
 }
@@ -231,7 +231,6 @@ header .container {
 .welcome__img {
   display: block;
   width: 100%;
-  /* width: 728px; */
   margin-top: 48px;
 
   @media (min-width: 1024px) {
@@ -258,17 +257,17 @@ header .container {
   }
 
   @media (min-width: 1920px) {
-    margin-top: 152px;
     width: 600px;
+    margin-top: 152px;
   }
 }
 
 .slider {
-  max-width: 230px;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
+  max-width: 230px;
 
   @media (min-width: 768px) {
     max-width: 400px;
@@ -303,9 +302,9 @@ header .container {
 }
 
 .slider__navigation {
-  width: 75px;
   display: flex;
   justify-content: space-between;
+  width: 75px;
 
   @media (min-width: 768px) {
     width: 160px;
@@ -317,9 +316,9 @@ header .container {
 }
 
 .slider__navigation-button {
+  background: #ffffff;
   width: 7px;
   height: 7px;
-  background: #ffffff;
 
   @media (min-width: 768px) {
     width: 12px;
@@ -337,9 +336,9 @@ header .container {
 }
 
 .slider__arrows {
-  width: 55px;
   display: flex;
   justify-content: space-between;
+  width: 55px;
 
   @media (min-width: 768px) {
     width: 80px;
@@ -369,8 +368,8 @@ header .container {
   }
 
   @media (min-width: 1024px) {
-    padding-bottom: 60px;
     padding-top: 55px;
+    padding-bottom: 60px;
   }
 
   @media (min-width: 1920px) {
@@ -405,10 +404,10 @@ header .container {
   }
 
   @media (min-width: 1024px) {
-    column-gap: 108px;
-    margin-top: 60px;
-    row-gap: 60px;
     grid-template-columns: repeat(2, 330px);
+    column-gap: 108px;
+    row-gap: 60px;
+    margin-top: 60px;
   }
 
   @media (min-width: 1440px) {
@@ -418,10 +417,10 @@ header .container {
   @media (min-width: 1920px) {
     grid-template-columns: repeat(3, 440px);
     justify-content: space-between;
-    margin-top: 75px;
-    margin-bottom: 75px;
     row-gap: 75px;
     column-gap: 0px;
+    margin-top: 75px;
+    margin-bottom: 75px;
   }
 }
 
@@ -432,11 +431,11 @@ header .container {
 .virtual__item-title {
   font-family: Forum;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 5px;
   text-transform: uppercase;
   color: #000000;
+  line-height: 100%;
+  letter-spacing: 5px;
+  font-size: 18px;
   margin-top: 22px;
 
   @media (min-width: 768px) {
@@ -468,17 +467,17 @@ header .container {
   }
 
   @media (min-width: 1920px) {
-    margin-top: 10px;
     width: 300px;
+    margin-top: 10px;
   }
 }
 
 .virtual__item-google {
   font-family: Roboto;
   font-weight: 200;
-  font-size: 16px;
   line-height: 100%;
   letter-spacing: 0;
+  font-size: 16px;
   margin-top: 10px;
 
   @media (min-width: 1920px) {
@@ -535,9 +534,9 @@ header .container {
 }
 
 .explore__description h2 {
+  line-height: 100%;
   border-bottom: 3px solid #710707;
   padding-bottom: 22px;
-  line-height: 100%;
 
   @media (min-width: 768px) {
     padding-bottom: 30px;
@@ -596,8 +595,8 @@ header .container {
   }
 
   @media (min-width: 1440px) {
-    margin: 0;
     width: 50%;
+    margin: 0;
   }
 
   @media (min-width: 1920px) {
@@ -686,9 +685,9 @@ header .container {
 }
 
 .video__slider {
-  margin-top: 36px;
   display: flex;
   justify-content: space-between;
+  margin-top: 36px;
 
   @media (min-width: 768px) {
     margin-top: 16px;
@@ -766,8 +765,8 @@ header .container {
   margin-bottom: 4px;
 
   @media (min-width: 768px) {
-    margin-bottom: 0px;
     height: 100%;
+    margin-bottom: 0px;
   }
 }
 
@@ -777,16 +776,16 @@ header .container {
   margin-bottom: 4px;
 
   @media (min-width: 768px) {
-    margin-bottom: 0px;
     height: 100%;
+    margin-bottom: 0px;
   }
 }
 
 #gallery {
+  overflow: hidden;
   color: #ffffff;
   background-color: #030303;
   height: 757px;
-  overflow: hidden;
 
   @media (min-width: 768px) {
     height: 1220px;
@@ -818,7 +817,6 @@ header .container {
 
 .gallery__table {
   display: grid;
-  /* justify-content: space-between; */
   width: fit-content;
   margin: auto;
   grid-template-columns: repeat(2, 178px);
@@ -831,8 +829,8 @@ header .container {
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 300px);
-    margin-top: 50px;
     column-gap: 36px;
+    margin-top: 50px;
   }
 
   @media (min-width: 1440px) {
@@ -915,10 +913,6 @@ header .container {
   width: 444px;
   margin-right: 60px;
 
-  /* @media (min-width: 768px) {
-    width: 700px;
-  } */
-
   @media (min-width: 1024px) {
     width: 700px;
   }
@@ -994,17 +988,17 @@ header .container {
 }
 
 .tickets__buy {
-  background-color: #000000;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  margin-left: auto;
   display: block;
-  margin-top: 40px;
+  background-color: #000000;
   font-size: 22px;
   line-height: 100%;
   letter-spacing: 2px;
   text-align: center;
   width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-left: auto;
+  margin-top: 40px;
 
   @media (min-width: 1024px) {
     margin-top: 70px;
@@ -1020,11 +1014,11 @@ header .container {
 .tickets__legend {
   font-family: Roboto;
   font-weight: 700;
-  font-size: 16px;
   line-height: 100%;
   letter-spacing: 0;
-  margin-bottom: 20px;
   text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
 
   @media (min-width: 768px) {
     margin-bottom: 44px;
@@ -1066,10 +1060,6 @@ header .container {
   border: 2px solid #000000;
   border-radius: 50%;
 }
-
-/* .tickets__type-container:hover input ~ .tickets__type-checkmark {
-  background-color: #ccc;
-} */
 
 .tickets__type-checkmark:after {
   content: "";
@@ -1137,17 +1127,17 @@ header .container {
 }
 
 .tickets__amount-total {
+  display: block;
   font-weight: 700;
   line-height: 100%;
   letter-spacing: 1.65px;
-  display: block;
   margin-top: 44px;
   text-align: center;
 
   @media (min-width: 768px) {
+    font-size: 28px;
     text-align: left;
     margin-top: 40px;
-    font-size: 28px;
   }
 
   @media (min-width: 1024px) {
@@ -1156,8 +1146,8 @@ header .container {
 }
 
 #parallax {
-  height: 300px;
   overflow: hidden;
+  height: 300px;
 
   @media (min-width: 1024px) {
     height: 400px;
@@ -1200,8 +1190,8 @@ header .container {
 .contacts__content {
   display: flex;
   justify-content: space-between;
-  margin-top: 44px;
   flex-direction: column;
+  margin-top: 44px;
 
   @media (min-width: 768px) {
     margin-top: 36px;
@@ -1225,8 +1215,8 @@ header .container {
   font-weight: 500;
   line-height: 100%;
   letter-spacing: 0;
-  margin-bottom: 46px;
   font-size: 16px;
+  margin-bottom: 46px;
 
   @media (min-width: 768px) {
     font-size: 24px;
@@ -1258,13 +1248,13 @@ header .container {
   margin-top: 24px;
 
   @media (min-width: 1024px) {
-    margin-top: 0px;
     width: 694px;
+    margin-top: 0px;
   }
 
   @media (min-width: 1440px) {
-    margin-top: 0px;
     width: 800px;
+    margin-top: 0px;
   }
 
   @media (min-width: 1920px) {
@@ -1280,9 +1270,9 @@ footer {
 footer .container {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   padding-top: 42px;
   padding-bottom: 38px;
-  flex-direction: column;
 
   @media (min-width: 768px) {
     padding-top: 48px;
@@ -1367,15 +1357,11 @@ footer .logo {
   margin-bottom: 0px;
 }
 
-/*.footer__list li:nth-child(2) {
-  margin-top: 0px;
-} */
-
 .footer__social {
-  margin: auto;
-  width: 260px;
   display: flex;
   justify-content: space-between;
+  width: 260px;
+  margin: auto;
   margin-top: 12px;
 
   @media (min-width: 768px) {
@@ -1386,7 +1372,6 @@ footer .logo {
   }
 
   @media (min-width: 1024px) {
-    margin-top: auto;
     margin-top: 0;
   }
 }
@@ -1408,8 +1393,8 @@ footer .logo {
 }
 
 #creation .container {
-  padding-top: 40px;
   flex-direction: row;
+  padding-top: 40px;
 
   @media (min-width: 1024px) {
     padding: 50px;
