@@ -20,7 +20,8 @@
                 <img src="assets/logo.svg">
                 <h1>Louvre</h1>
             </div>
-            <nav>
+
+            <nav class="header__menu--desktop">
                 <ul class="header__menu">
                     <li>
                         <a>Visiting</a>
@@ -42,6 +43,8 @@
                     </li>
                 </ul>
             </nav>
+
+            <img class="header__menu--tablet" src="assets/burger-menu.svg" alt="menu">
         </div>
     </header>
 
@@ -57,6 +60,8 @@
                         <a>Discover the Louvre</a>
                     </button>
                 </div>
+
+                <img class="welcome__img" src="./assets/img/welcome-slider/1.jpg">
 
                 <div class="welcome__slider">
                     <div class="slider">
@@ -88,37 +93,37 @@
                 </h2>
                 <div class="virtual__grid">
                     <div class="virtual__item">
-                        <img src="assets/img/virtual-tour/tour1.jpg" alt="">
+                        <img class="virtual__item-img" src="assets/img/virtual-tour/tour1.jpg" alt="">
                         <h3 class="virtual__item-title">Royal Palace</h3>
                         <p class="virtual__item-360">360° Virtual Tour</p>
                         <p class="virtual__item-google">Google Street Panorama View</p>
                     </div>
                     <div class="virtual__item">
-                        <img src="assets/img/virtual-tour/tour2.jpg" alt="">
+                        <img class="virtual__item-img" src="assets/img/virtual-tour/tour2.jpg" alt="">
                         <h3 class="virtual__item-title">Denon Wing</h3>
                         <p class="virtual__item-360">360° Virtual Tour</p>
                         <p class="virtual__item-google">Google Street Panorama View</p>
                     </div>
                     <div class="virtual__item">
-                        <img src="assets/img/virtual-tour/tour3.jpg" alt="">
+                        <img class="virtual__item-img" src="assets/img/virtual-tour/tour3.jpg" alt="">
                         <h3 class="virtual__item-title">Colonnade Perrault</h3>
                         <p class="virtual__item-360">360° Virtual Tour</p>
                         <p class="virtual__item-google">Google Street Panorama View</p>
                     </div>
                     <div class="virtual__item">
-                        <img src="assets/img/virtual-tour/tour4.jpg" alt="">
+                        <img class="virtual__item-img" src="assets/img/virtual-tour/tour4.jpg" alt="">
                         <h3 class="virtual__item-title">Greek hall</h3>
                         <p class="virtual__item-360">360° Virtual Tour</p>
                         <p class="virtual__item-google">Google Street Panorama View</p>
                     </div>
                     <div class="virtual__item">
-                        <img src="assets/img/virtual-tour/tour5.jpg" alt="">
+                        <img class="virtual__item-img" src="assets/img/virtual-tour/tour5.jpg" alt="">
                         <h3 class="virtual__item-title">Mona Lisa</h3>
                         <p class="virtual__item-360">360° Virtual Tour</p>
                         <p class="virtual__item-google">Google Street Panorama View</p>
                     </div>
                     <div class="virtual__item">
-                        <img src="assets/img/virtual-tour/tour6.jpg" alt="">
+                        <img class="virtual__item-img" src="assets/img/virtual-tour/tour6.jpg" alt="">
                         <h3 class="virtual__item-title">Night Palace</h3>
                         <p class="virtual__item-360">360° Virtual Tour</p>
                         <p class="virtual__item-google">Google Street Panorama View</p>
@@ -143,14 +148,15 @@
                             restoration in the 19th
                             century.
                         </p>
-                        <p>The cleaning provoked furious protests, not because the picture had been damaged in any
+                        <p>The cleaning provoked furious protests, not because the
+                            picture had been damaged in any
                             way, but
                             because it looked
                             different.
                         </p>
                     </div>
                 </div>
-                <img src="assets/img/explore-slider/before.jpg">
+                <img class="explore__img" src="assets/img/explore-slider/before.jpg">
             </div>
         </section>
 
@@ -235,36 +241,40 @@
                                 </label>
                             </fieldset>
                             <fieldset class="tickets__amount">
-                                <legend class="tickets__legend">Amount</legend>
-                                <label class="tickets__amount-label">Basic 18+</label>
-                                <div class="counter">
-                                    <button class="counter__button" type="button"
-                                        onclick="this.nextElementSibling.stepDown()">
-                                        –
-                                    </button>
-                                    <input class="counter__number" type="number" min="0" max="20" value="1" readonly>
-                                    <button class="counter__button" type="button"
-                                        onclick="this.previousElementSibling.stepUp()">
-                                        +
-                                    </button>
-                                </div>
+                                <div>
+                                    <legend class="tickets__legend">Amount</legend>
+                                    <label class="tickets__amount-label">Basic 18+</label>
+                                    <div class="counter">
+                                        <button class="counter__button" type="button"
+                                            onclick="this.nextElementSibling.stepDown()">
+                                            –
+                                        </button>
+                                        <input class="counter__number" type="number" min="0" max="20" value="1"
+                                            readonly>
+                                        <button class="counter__button" type="button"
+                                            onclick="this.previousElementSibling.stepUp()">
+                                            +
+                                        </button>
+                                    </div>
 
-                                <label class="tickets__amount-label">Senior 65+</label>
-                                <div class="counter">
-                                    <button class="counter__button" type="button"
-                                        onclick="this.nextElementSibling.stepDown()">
-                                        –
-                                    </button>
-                                    <input class="counter__number" type="number" min="0" max="20" value="1" readonly>
-                                    <button class="counter__button" type="button"
-                                        onclick="this.previousElementSibling.stepUp()">
-                                        +
-                                    </button>
+                                    <label class="tickets__amount-label">Senior 65+</label>
+                                    <div class="counter">
+                                        <button class="counter__button" type="button"
+                                            onclick="this.nextElementSibling.stepDown()">
+                                            –
+                                        </button>
+                                        <input class="counter__number" type="number" min="0" max="20" value="1"
+                                            readonly>
+                                        <button class="counter__button" type="button"
+                                            onclick="this.previousElementSibling.stepUp()">
+                                            +
+                                        </button>
+                                    </div>
+                                    <b class="tickets__amount-total">Total €225</b>
                                 </div>
-                                <b class="tickets__amount-total">Total €225</b>
+                                <button class="tickets__buy">Buy Now</button>
                             </fieldset>
                         </div>
-                        <button class="tickets__buy">Buy Now</button>
                     </form>
                 </div>
             </div>
