@@ -175,3 +175,43 @@ function test() {
 }
 
 test();
+
+const draggable = document.querySelector(".explore__img-separator");
+const beforeImg = document.querySelector(".explore__img--after");
+let isDragging = false;
+
+draggable.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  document.body.style.userSelect = "none"; // отключаем выделение текста
+});
+
+const myElement = document.querySelector(".explore__img-container");
+
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+
+  // Ограничение внутри родителя
+  const container = draggable.parentElement;
+  const rect = container.getBoundingClientRect();
+  let newLeft = e.clientX - rect.left;
+
+  // Границы
+  newLeft = Math.max(0, Math.min(newLeft, rect.width - draggable.offsetWidth));
+
+  let offsetX = e.clientX - rect.left;
+
+  // Ограничим в пределах контейнера
+  offsetX = Math.max(0, Math.min(offsetX, rect.width));
+
+  const percent = (offsetX / rect.width) * 100;
+
+  // draggable.style.left = `${newLeft}px`;
+  beforeImg.style.width = `${percent}%`;
+  draggable.style.left = `calc(${percent}% - 15px)`;
+  myElement.style.setProperty("--left", `${percent}%`);
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  document.body.style.userSelect = ""; // включаем выделение текста
+});
