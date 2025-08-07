@@ -72,8 +72,9 @@ function initVideoSection() {
 
   const changeVideo = () => {
     const currentVideoSrc = videoSlides[counter].src;
-    console.log("currentVideoSrc", currentVideoSrc);
+    const currentVideoPoster = videoSlides[counter].poster;
     mainVideo.src = currentVideoSrc;
+    mainVideo.poster = currentVideoPoster;
   };
 
   const backClick = () => {
