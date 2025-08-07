@@ -8,6 +8,10 @@ ul {
   margin: 0;
   padding: 0;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 h1,
 h2,
 h3,
@@ -170,16 +174,15 @@ header .container {
 }
 
 #welcome .container {
+  position: relative;
   padding-top: 12px;
 
   @media (min-width: 768px) {
     padding-top: 10px;
   }
 
-  @media (min-width: 1024px) {
-    background-image: url("assets/img/welcome-slider/1.jpg");
-    background-repeat: no-repeat;
-    background-position: right top;
+  @media (min-width: 1920px) {
+    padding-top: 0px;
   }
 }
 
@@ -187,6 +190,8 @@ header .container {
   text-align: center;
 
   @media (min-width: 1024px) {
+    position: relative;
+    z-index: 1;
     text-align: left;
     padding-top: 42px;
     max-width: 600px;
@@ -234,7 +239,14 @@ header .container {
   margin-top: 48px;
 
   @media (min-width: 1024px) {
-    display: none;
+    mask-image: linear-gradient(to left, black 70%, transparent);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1000px;
+    height: 750px;
+    margin-top: 0px;
+    margin-right: 20px;
   }
 }
 
@@ -249,6 +261,8 @@ header .container {
   }
 
   @media (min-width: 1024px) {
+    position: relative;
+    z-index: 1;
     width: 700px;
     margin-top: 70px;
     margin-left: auto;
@@ -296,8 +310,8 @@ header .container {
   margin-right: 2px;
 
   @media (min-width: 768px) {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
   }
 }
 
@@ -329,6 +343,10 @@ header .container {
     width: 16px;
     height: 16px;
   }
+}
+
+.active-navigation {
+  background: #d2b183;
 }
 
 .slider__navigation-button span {
@@ -684,10 +702,20 @@ header .container {
   }
 }
 
+.video__container {
+  overflow: hidden;
+}
+
 .video__slider {
   display: flex;
   justify-content: space-between;
   margin-top: 36px;
+
+  transition: transform 0.4s ease;
+  will-change: transform;
+
+  /* animation: scroll 40s linear; */
+  /* width: calc(250px * 14); */
 
   @media (min-width: 768px) {
     margin-top: 16px;
@@ -702,7 +730,16 @@ header .container {
   }
 }
 
-.video__slider video {
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+.video__slide {
   width: 180px;
   height: 101px;
 
