@@ -787,6 +787,10 @@ header .container {
   }
 }
 
+.video__slider-button--active {
+  background-color: #333333;
+}
+
 .video__slider-button span {
   visibility: hidden;
 }
@@ -1188,6 +1192,11 @@ header .container {
 #parallax {
   overflow: hidden;
   height: 300px;
+  width: 100%;
+
+  background-image: url("./assets/img/parallax.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 
   @media (min-width: 1024px) {
     height: 400px;

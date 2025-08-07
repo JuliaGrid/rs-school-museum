@@ -99,9 +99,11 @@ function test() {
   const items = Array.from(track.children);
   const prevBtn = document.querySelector(".video__slider-arrow-back");
   const nextBtn = document.querySelector(".video__slider-arrow-foward");
+  const videoSliderButtons = document.querySelectorAll(".video__slider-button");
   const visibleCount = 4;
   const totalItems = items.length;
   const itemWidth = items[0].getBoundingClientRect().width + 10; // include margin
+  let counter = 0;
   let index = 0;
 
   // Клонируем элементы для бесконечности
@@ -124,12 +126,27 @@ function test() {
   // Начальная позиция — смещение на "visibleCount" элементов вперёд
   track.style.transform = `translateX(${-itemWidth * visibleCount}px)`;
   index = visibleCount;
-
+  let prevSliderNavigationButton = videoSliderButtons[counter];
   let isMoving = false;
 
   function moveTo(newIndex) {
     if (isMoving) return;
     isMoving = true;
+
+    switch (newIndex) {
+      case 9:
+        counter = 0;
+        break;
+      case 3:
+        counter = 4;
+        break;
+      default:
+        counter = newIndex - 4;
+    }
+
+    prevSliderNavigationButton.classList.remove("video__slider-button--active");
+    prevSliderNavigationButton = videoSliderButtons[counter];
+    videoSliderButtons[counter].classList.add("video__slider-button--active");
 
     track.style.transition = "transform 0.5s ease";
     track.style.transform = `translateX(${-itemWidth * newIndex}px)`;
