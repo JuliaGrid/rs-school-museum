@@ -716,11 +716,7 @@ header .container {
   justify-content: space-between;
   margin-top: 36px;
 
-  transition: transform 0.4s ease;
   will-change: transform;
-
-  /* animation: scroll 40s linear; */
-  /* width: calc(250px * 14); */
 
   @media (min-width: 768px) {
     margin-top: 16px;
@@ -735,18 +731,10 @@ header .container {
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 7));
-  }
-}
-
 .video__slide {
   width: 180px;
   height: 101px;
+  margin-right: 10px;
 
   @media (min-width: 768px) {
     width: 354px;

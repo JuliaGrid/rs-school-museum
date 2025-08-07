@@ -91,4 +91,70 @@ function initVideoSection() {
   arrowFoward.addEventListener("click", fowardClick);
 }
 
-initVideoSection();
+// initVideoSection();
+
+function test() {
+  const mainVideo = document.querySelector(".video__main");
+  const track = document.querySelector(".video__slider");
+  const items = Array.from(track.children);
+  const prevBtn = document.querySelector(".video__slider-arrow-back");
+  const nextBtn = document.querySelector(".video__slider-arrow-foward");
+  const visibleCount = 4;
+  const totalItems = items.length;
+  const itemWidth = items[0].getBoundingClientRect().width + 10; // include margin
+  let index = 0;
+
+  // Клонируем элементы для бесконечности
+  for (let i = 0; i < visibleCount; i++) {
+    track.appendChild(items[i].cloneNode(true));
+    track.insertBefore(
+      items[totalItems - 1 - i].cloneNode(true),
+      track.firstChild
+    );
+  }
+
+  const changeVideo = () => {
+    const currentVideoSrc = track.children[index].src;
+    const currentVideoPoster = track.children[index].poster;
+
+    mainVideo.src = currentVideoSrc;
+    mainVideo.poster = currentVideoPoster;
+  };
+
+  // Начальная позиция — смещение на "visibleCount" элементов вперёд
+  track.style.transform = `translateX(${-itemWidth * visibleCount}px)`;
+  index = visibleCount;
+
+  let isMoving = false;
+
+  function moveTo(newIndex) {
+    if (isMoving) return;
+    isMoving = true;
+
+    track.style.transition = "transform 0.5s ease";
+    track.style.transform = `translateX(${-itemWidth * newIndex}px)`;
+    index = newIndex;
+    changeVideo();
+  }
+
+  track.addEventListener("transitionend", () => {
+    isMoving = false;
+
+    if (index >= totalItems + visibleCount) {
+      track.style.transition = "none";
+      index = visibleCount;
+      track.style.transform = `translateX(${-itemWidth * index}px)`;
+    }
+
+    if (index < visibleCount) {
+      track.style.transition = "none";
+      index = totalItems + visibleCount - 1;
+      track.style.transform = `translateX(${-itemWidth * index}px)`;
+    }
+  });
+
+  nextBtn.addEventListener("click", () => moveTo(index + 1));
+  prevBtn.addEventListener("click", () => moveTo(index - 1));
+}
+
+test();
