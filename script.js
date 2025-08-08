@@ -1,3 +1,24 @@
+function initMenu() {
+  const headerWrapper = document.querySelector(".header__wrapper");
+  const headerMenuBurger = document.querySelector(".header__menu--burger");
+
+  let isActive = false;
+
+  const toggleActive = () => {
+    if (isActive) {
+      headerMenuBurger.firstElementChild.src = "assets/burger-menu.svg";
+    } else {
+      headerMenuBurger.firstElementChild.src = "assets/cross.svg";
+    }
+    headerWrapper.classList.toggle("menu-active");
+    isActive = !isActive;
+  };
+
+  headerMenuBurger.addEventListener("click", toggleActive);
+}
+
+initMenu();
+
 function initWelcomeSlider() {
   const sliderInfoCurrent = document.querySelector(".slider__info-current");
   const sliderInfoMax = document.querySelector(".slider__info-max");
@@ -54,46 +75,6 @@ function initWelcomeSlider() {
 initWelcomeSlider();
 
 function initVideoSection() {
-  const mainVideo = document.querySelector(".video__main");
-  const videoSlides = document.querySelectorAll(".video__slide");
-  const arrowBack = document.querySelector(".video__slider-arrow-back");
-  const arrowFoward = document.querySelector(".video__slider-arrow-foward");
-
-  // const track = document.querySelector(".video__slider");
-  // const items = Array.from(track.children);
-  // const itemWidth = items[0].offsetWidth + 10;
-
-  let counter = 0;
-
-  const VIDEO_CONFIG = {
-    minCount: 0,
-    maxCount: 5,
-  };
-
-  const changeVideo = () => {
-    const currentVideoSrc = videoSlides[counter].src;
-    const currentVideoPoster = videoSlides[counter].poster;
-    mainVideo.src = currentVideoSrc;
-    mainVideo.poster = currentVideoPoster;
-  };
-
-  const backClick = () => {
-    counter--;
-    changeVideo();
-  };
-
-  const fowardClick = () => {
-    counter++;
-    changeVideo();
-  };
-
-  arrowBack.addEventListener("click", backClick);
-  arrowFoward.addEventListener("click", fowardClick);
-}
-
-// initVideoSection();
-
-function test() {
   const mainVideo = document.querySelector(".video__main");
   const track = document.querySelector(".video__slider");
   const items = Array.from(track.children);
@@ -174,44 +155,50 @@ function test() {
   prevBtn.addEventListener("click", () => moveTo(index - 1));
 }
 
-test();
+initVideoSection();
 
-const draggable = document.querySelector(".explore__img-separator");
-const beforeImg = document.querySelector(".explore__img--after");
-let isDragging = false;
+function initBeforeAfter() {
+  const separator = document.querySelector(".explore__img-separator");
+  const beforeImg = document.querySelector(".explore__img--after");
+  let isDragging = false;
 
-draggable.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  document.body.style.userSelect = "none"; // отключаем выделение текста
-});
+  separator.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    document.body.style.userSelect = "none";
+  });
 
-const myElement = document.querySelector(".explore__img-container");
+  const myElement = document.querySelector(".explore__img-container");
 
-document.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
+  document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
 
-  // Ограничение внутри родителя
-  const container = draggable.parentElement;
-  const rect = container.getBoundingClientRect();
-  let newLeft = e.clientX - rect.left;
+    // Ограничение внутри родителя
+    const container = separator.parentElement;
+    const rect = container.getBoundingClientRect();
+    let newLeft = e.clientX - rect.left;
 
-  // Границы
-  newLeft = Math.max(0, Math.min(newLeft, rect.width - draggable.offsetWidth));
+    // Границы
+    newLeft = Math.max(
+      0,
+      Math.min(newLeft, rect.width - separator.offsetWidth)
+    );
 
-  let offsetX = e.clientX - rect.left;
+    let offsetX = e.clientX - rect.left;
 
-  // Ограничим в пределах контейнера
-  offsetX = Math.max(0, Math.min(offsetX, rect.width));
+    // Ограничим в пределах контейнера
+    offsetX = Math.max(0, Math.min(offsetX, rect.width));
 
-  const percent = (offsetX / rect.width) * 100;
+    const percent = (offsetX / rect.width) * 100;
 
-  // draggable.style.left = `${newLeft}px`;
-  beforeImg.style.width = `${percent}%`;
-  draggable.style.left = `calc(${percent}% - 15px)`;
-  myElement.style.setProperty("--left", `${percent}%`);
-});
+    beforeImg.style.width = `${percent}%`;
+    separator.style.left = `calc(${percent}% - 15px)`;
+    myElement.style.setProperty("--left", `${percent}%`);
+  });
 
-document.addEventListener("mouseup", () => {
-  isDragging = false;
-  document.body.style.userSelect = ""; // включаем выделение текста
-});
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+    document.body.style.userSelect = "";
+  });
+}
+
+initBeforeAfter();

@@ -147,19 +147,101 @@ header .container {
   }
 }
 
-.header__menu {
-  display: flex;
-}
+.header__wrapper {
+  /* display: none; */
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  z-index: 100;
+  top: 30px;
+  /* animation: anim 1s ease; */
 
-.header__menu--desktop {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0.5s;
+
+  @media (min-width: 1024px) {
+    width: 1000px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1240px;
+  }
 
   @media (min-width: 1920px) {
-    display: block;
+    position: relative;
+    width: 30%;
+    margin: 0;
+    top: 0px;
   }
 }
 
-.header__menu--tablet {
+@keyframes anim {
+  0% {
+    display: block;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes close {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+
+.header__menu {
+  position: absolute;
+  background-color: black;
+  right: 0;
+  top: 70px;
+  padding: 20px;
+  padding-right: 40px;
+  height: 575px;
+  width: 30%;
+  z-index: 2;
+  text-align: right;
+  mask-image: linear-gradient(to left, black 70%, transparent);
+
+  @media (min-width: 1920px) {
+    display: block;
+    position: relative;
+    text-align: left;
+    mask-image: none;
+    background-color: transparent;
+    padding: 0px;
+    height: auto;
+    right: 0;
+    top: 0px;
+  }
+}
+
+.menu-active {
+  /* display: block; */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.header__list {
+  @media (min-width: 1920px) {
+    display: flex;
+  }
+}
+
+.header__menu--burger {
   display: block;
 
   @media (min-width: 1920px) {
@@ -167,10 +249,19 @@ header .container {
   }
 }
 
-.header__menu li {
-  margin-left: 56px;
+.header__item {
+  margin-top: 30px;
   font-weight: 200;
   letter-spacing: 2px;
+
+  @media (min-width: 1920px) {
+    margin-top: 0;
+    margin-left: 56px;
+  }
+}
+
+.header__item a:hover {
+  color: #9d8665;
 }
 
 #welcome {
